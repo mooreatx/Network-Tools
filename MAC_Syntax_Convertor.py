@@ -1,3 +1,6 @@
+# Python Script that converts MAC Address formats to different standards
+# Converts between Cisco, UNIX, and EUI-48 Format depending on input
+
 print "\n"
 print "What is your MAC address?"
 mac_addr = raw_input("MAC Address> ")
