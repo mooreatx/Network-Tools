@@ -1,4 +1,5 @@
 #Template for spitting interface range of commands
+#Generates range of Juniper Interface commands for copy & paste
 target = raw_input("Type your initial interface command except for the switch port (ie set interface ge-0/0/ ) :  ")
 end_target = raw_input("Type the last portion of your interface command: ")
 
