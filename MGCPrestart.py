@@ -1,13 +1,14 @@
 #! python3
 # MGCPrestart.py logs into voice gateway and restarts MGCP service
 
-import os, sys, getpass, time
+import os, sys, re, getpass, time
 from netmiko import ConnectHandler
 
 os.chdir('C:\\Users\\182195\\OneDrive - Tokyo Electron Limited\\Network Info\\PyScripts\\')
 
 def restart():
 	while True:
+		# Some Exception Handling
 		try:
 			# Gateway List
 			print('\n### Voice Gateway List ###\n')
@@ -31,10 +32,32 @@ def restart():
 			print('\n')
 
 
-			# TODO: Exception handling if wrong input is entered
-
 			device = input('Enter IP of voice gateway: ')
-	
+			
+			# Confirm that correct IP Address format is used
+			# TODO: Use correct RFC format for IP addresses
+			non_characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',' ']
+			res = any(non in device for non in non_characters)	
+			ipformat_regex = re.compile(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')
+			ipformat = ipformat_regex.search(device)
+			
+
+			if not device:
+				print('\nIP Address needed')
+				print()
+				continue
+			
+			if ipformat == None:
+				print('\nPlease us correct IP address format')
+				print()
+				continue
+				
+			if res == True:
+				print('\nPlease us correct IP address format')
+				print()
+				continue
+			
+			# Username and password input --password is hidden using getpass module--
 			print('\n\n### Restart MGCP Service on Voice Gateway ###\n')
 			username = input('Enter in your username: ')
 			password = getpass.getpass('Enter in your password: ')
@@ -64,6 +87,7 @@ def restart():
 			mgcp_conf = net_connect.send_config_set(mgcp)
 
 			print('MGCP service on {} restarted successfully\n'.format(device))
+		# Some Exception Handling - TODO: Add more multiple Execption handling alerts
 		except KeyboardInterrupt:
 			sys.exit('\n\nGoodbye!\n')
 restart()
