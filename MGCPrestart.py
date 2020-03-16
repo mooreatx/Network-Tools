@@ -1,14 +1,13 @@
 #! python3
 # MGCPrestart.py logs into voice gateway and restarts MGCP service
 
-import os, sys, re, getpass, time
+import os, sys, re, getpass, time, paramiko
 from netmiko import ConnectHandler
 
 os.chdir('C:\\Users\\182195\\OneDrive - Tokyo Electron Limited\\Network Info\\PyScripts\\')
 
 def restart():
 	while True:
-		# Some Exception Handling
 		try:
 			# Gateway List
 			print('\n### Voice Gateway List ###\n')
@@ -87,7 +86,12 @@ def restart():
 			mgcp_conf = net_connect.send_config_set(mgcp)
 
 			print('MGCP service on {} restarted successfully\n'.format(device))
-		# Some Exception Handling - TODO: Add more multiple Execption handling alerts
+		# Some Exception Handling
+		# Failed Authentication
+		except paramiko.AuthenticationException as error:
+			print('\n!!! AUTHENTICATION FAILED !!!')
+			print()
+			continue
 		except KeyboardInterrupt:
 			sys.exit('\n\nGoodbye!\n')
 restart()
