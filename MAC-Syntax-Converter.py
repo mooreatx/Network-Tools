@@ -10,6 +10,7 @@ def macAddress():
 			print()
 			print("What is your MAC address?")
 			mac_addr = input("MAC Address> ")
+			mac_addr = mac_addr.lower()
 			print()
 	
 			non_characters = ['g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',' ']
