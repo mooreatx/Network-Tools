@@ -1,0 +1,12 @@
+[
+  {
+    "name": "lab-core-01",
+    "host": "192.0.2.10",
+    "platform": "cisco_ios"
+  },
+  {
+    "name": "lab-edge-01",
+    "host": "edge-01.example.net",
+    "platform": "cisco_ios"
+  }
+]
