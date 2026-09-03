@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import re
+from dataclasses import dataclass
 
 
 _HEX_RE = re.compile(r"^[0-9a-fA-F]{12}$")

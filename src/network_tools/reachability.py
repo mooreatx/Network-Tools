@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
+import platform
+import subprocess
 from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
-import platform
-import subprocess
 
 
 Runner = Callable[..., subprocess.CompletedProcess[str]]
