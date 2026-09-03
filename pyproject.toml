@@ -20,7 +20,7 @@ dependencies = []
 
 [project.optional-dependencies]
 automation = ["netmiko>=4.4,<5"]
-dev = ["pytest>=8.3,<9", "pytest-cov>=6,<7", "ruff>=0.12,<0.13", "pre-commit>=4,<5"]
+dev = ["pytest>=8.3,<9", "pytest-cov>=6,<8", "ruff>=0.12,<0.13", "pre-commit>=4,<5"]
 
 [project.scripts]
 network-tools = "network_tools.cli:main"
