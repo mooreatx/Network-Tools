@@ -1,7 +1,6 @@
 # Network Automation Tools
 
-[![CI](https://github.com/mooreatx/Network-Tools/actions/workflows/ci.yml/badge.svg)]
-(https://github.com/mooreatx/Network-Tools/actions/workflows/ci.yml)
+[![CI](https://github.com/mooreatx/Network-Tools/actions/workflows/ci.yml/badge.svg)](https://github.com/mooreatx/Network-Tools/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
