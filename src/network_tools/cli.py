@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Sequence
 import json
-from typing import Sequence
 
 from network_tools.interfaces import generate_interface_commands
 from network_tools.mac import MacAddress
