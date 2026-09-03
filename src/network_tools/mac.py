@@ -18,9 +18,7 @@ class MacAddress:
     def __post_init__(self) -> None:
         normalized = re.sub(r"[:.\-]", "", self.value).lower()
         if not _HEX_RE.fullmatch(normalized):
-            raise ValueError(
-                "MAC address must contain exactly 12 hexadecimal characters"
-            )
+            raise ValueError("MAC address must contain exactly 12 hexadecimal characters")
         object.__setattr__(self, "value", normalized)
 
     @property
