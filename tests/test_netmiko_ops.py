@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 
-from network_tools.inventory import Device
 import pytest
 
+from network_tools.inventory import Device
 from network_tools.netmiko_ops import (
     collect_facts,
     connection_parameters,
